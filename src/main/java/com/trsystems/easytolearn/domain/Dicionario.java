@@ -9,8 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "TB_DICIONARIO")
 public class Dicionario implements Serializable {
