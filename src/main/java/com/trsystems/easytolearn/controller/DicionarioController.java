@@ -1,5 +1,7 @@
 package com.trsystems.easytolearn.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,7 +26,7 @@ public class DicionarioController {
 	private DicionarioService dicionarioService;
 
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Dicionario> cadastrar(@RequestBody Dicionario dicionario) {
+	public ResponseEntity<Dicionario> cadastrar(@RequestBody @Valid Dicionario dicionario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(dicionarioService.cadastrar(dicionario));
 	}
 	
